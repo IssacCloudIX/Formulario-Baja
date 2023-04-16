@@ -84,7 +84,8 @@ function mostrarMenu()
 	document.getElementsByClassName("comentarios")[1].style.display = "none";
 
 	const table = document.getElementById("resultadoBusqueda");
-	const rows = document.getElementsByTagName("tr");
+	const rows = document.getElementsByClassName("trBusqueda");
+	
 	for (let i = 0; i < rows.length; i++) 
 	{
 		// Remove each row from the table
@@ -507,7 +508,7 @@ function busqueda()
 
 	let tabla = document.getElementById("resultadoBusqueda");
 	tabla.innerHTML = "";
-	tabla.innerHTML = " <thead class='table-danger'> <tr>" 
+	tabla.innerHTML = " <thead class='table-danger'> <tr class = 'trBusqueda'>" 
 					 + "<th>Clave</th>"
 					 + "<th>Nombre</th>"
 					 + "<th>Ap Paterno</th>"
@@ -547,7 +548,7 @@ function busqueda()
 					 {
 						if(x[i].childNodes[0].nodeValue == valor)
 						{
-						 	tabla.innerHTML += "<tr class='table-primary'>"
+						 	tabla.innerHTML += "<tr class='table-primary trBusqueda'>"
 							               + "<td>"
 										   + a[i].childNodes[0].childNodes[0].nodeValue
 										   + "</td>"
@@ -606,7 +607,7 @@ function busqueda()
 					aux += " "; 
 				}
 
-				tabla.innerHTML += "<tr class='table-primary'>"
+				tabla.innerHTML += "<tr class='table-primary trBusqueda'>"
 								+ "<td>"
 								+ bajasParser.bajas[i].clave
 								+"</td>"
